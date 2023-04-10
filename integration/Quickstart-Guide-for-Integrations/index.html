@@ -584,7 +584,7 @@ to generate an image for the version 1.5.0, you may execute:
 <div class="highlight"><pre><span></span><code><a href="#__codelineno-4-1" id="__codelineno-4-1" name="__codelineno-4-1"></a>git checkout release/1.5.0
 </code></pre></div></p>
 <p>Now, we can create the StartLeft image:
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-5-1" id="__codelineno-5-1" name="__codelineno-5-1"></a>docker build . -f deployment/Dockerfile.docs.application.application -t startleft
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-5-1" id="__codelineno-5-1" name="__codelineno-5-1"></a>docker build . -f deployment/Dockerfile.application -t startleft
 </code></pre></div></p>
 <p>And, finally, we can run the docker container for the image we have just generated. Notice that you can select the
 port where the service is exposed in a standard Docker way.
@@ -616,12 +616,18 @@ For more details about how to use the StartLeft API, you can check the <a href="
 <p>The Dockerfile provided should be enough for the most common integration scenarios, but, of course, it is possible to
 create a custom docker image for StartLeft. For that, you can take the existent 
 <a href="https://raw.githubusercontent.com/iriusrisk/startleft/main/Dockerfile">Dockerfile</a> available in the root of the StartLeft
-repository as a base. However, you must bear in mind that every <a href="https://hub.docker.com/_/python">official python image from the Docker Hub</a> 
-for versions over 3.6 should work, but:</p>
+repository as a base. However, you must bear in mind the following considerations:</p>
 <ul>
+<li>Every <a href="https://hub.docker.com/_/python">official python image from the Docker Hub</a> for versions over 3.6 should work, but:<ul>
 <li>Depending on the base image, you may need to install additional libraries.</li>
 <li><strong>Debian/Ubuntu based python official images present security vulnerabilities</strong>. This is the reason we decided 
-    to use the Alpine based one despite the fact it is significantly slower than others at building time.</li>
+to use the Alpine based one despite the fact it is significantly slower than others at building time.</li>
+</ul>
+</li>
+<li>Although you could set as the entrypoint the <code>startleft server</code> command, it is more recommendable to just use the uvicorn 
+  command, that also allows you to select the default deployment port:
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-10-1" id="__codelineno-10-1" name="__codelineno-10-1"></a>ENTRYPOINT ["uvicorn", "startleft.startleft.api.fastapi_server:webapp", "--host", "0.0.0.0", "--port", "5000"]
+</code></pre></div></li>
 </ul>
 <h2 id="in-batch-processes">In batch processes</h2>
 <hr/>
@@ -646,15 +652,15 @@ of software. Thus, <strong>releasing useful modules as the SLPs or the OTM modul
 However, even though an advanced user could manage to install and use StartLeft as a library, it is not recommended because 
 some related changes (like modules' visibility) that could break retro compatibility will probably need to be done.</p>
 <p>The final goal would be that, <u>in the future</u>, you could do something like this in your own python script:
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-10-1" id="__codelineno-10-1" name="__codelineno-10-1"></a><span class="kn">from</span> <span class="nn">slp_visio</span> <span class="kn">import</span> <span class="n">VisioProcessor</span>
-<a href="#__codelineno-10-2" id="__codelineno-10-2" name="__codelineno-10-2"></a>
-<a href="#__codelineno-10-3" id="__codelineno-10-3" name="__codelineno-10-3"></a><span class="n">visio_processor</span> <span class="o">=</span> <span class="n">VisioProcessor</span><span class="p">(</span>
-<a href="#__codelineno-10-4" id="__codelineno-10-4" name="__codelineno-10-4"></a>    <span class="n">project_id</span><span class="o">=</span><span class="s1">'sample-project-id'</span><span class="p">,</span> 
-<a href="#__codelineno-10-5" id="__codelineno-10-5" name="__codelineno-10-5"></a>    <span class="n">project_name</span><span class="o">=</span><span class="s1">'sample-project-name'</span><span class="p">,</span> 
-<a href="#__codelineno-10-6" id="__codelineno-10-6" name="__codelineno-10-6"></a>    <span class="n">source</span><span class="o">=</span><span class="nb">open</span><span class="p">(</span><span class="s1">'visio.vsdx'</span><span class="p">,</span> <span class="s1">'r'</span><span class="p">),</span> 
-<a href="#__codelineno-10-7" id="__codelineno-10-7" name="__codelineno-10-7"></a>    <span class="n">mappings</span><span class="o">=</span><span class="p">[</span><span class="nb">open</span><span class="p">(</span><span class="s1">'mapping.yaml'</span><span class="p">,</span> <span class="s1">'r'</span><span class="p">)])</span>
-<a href="#__codelineno-10-8" id="__codelineno-10-8" name="__codelineno-10-8"></a>
-<a href="#__codelineno-10-9" id="__codelineno-10-9" name="__codelineno-10-9"></a><span class="n">otm</span> <span class="o">=</span> <span class="n">visio_processor</span><span class="o">.</span><span class="n">process</span><span class="p">()</span>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-11-1" id="__codelineno-11-1" name="__codelineno-11-1"></a><span class="kn">from</span> <span class="nn">slp_visio</span> <span class="kn">import</span> <span class="n">VisioProcessor</span>
+<a href="#__codelineno-11-2" id="__codelineno-11-2" name="__codelineno-11-2"></a>
+<a href="#__codelineno-11-3" id="__codelineno-11-3" name="__codelineno-11-3"></a><span class="n">visio_processor</span> <span class="o">=</span> <span class="n">VisioProcessor</span><span class="p">(</span>
+<a href="#__codelineno-11-4" id="__codelineno-11-4" name="__codelineno-11-4"></a>    <span class="n">project_id</span><span class="o">=</span><span class="s1">'sample-project-id'</span><span class="p">,</span> 
+<a href="#__codelineno-11-5" id="__codelineno-11-5" name="__codelineno-11-5"></a>    <span class="n">project_name</span><span class="o">=</span><span class="s1">'sample-project-name'</span><span class="p">,</span> 
+<a href="#__codelineno-11-6" id="__codelineno-11-6" name="__codelineno-11-6"></a>    <span class="n">source</span><span class="o">=</span><span class="nb">open</span><span class="p">(</span><span class="s1">'visio.vsdx'</span><span class="p">,</span> <span class="s1">'r'</span><span class="p">),</span> 
+<a href="#__codelineno-11-7" id="__codelineno-11-7" name="__codelineno-11-7"></a>    <span class="n">mappings</span><span class="o">=</span><span class="p">[</span><span class="nb">open</span><span class="p">(</span><span class="s1">'mapping.yaml'</span><span class="p">,</span> <span class="s1">'r'</span><span class="p">)])</span>
+<a href="#__codelineno-11-8" id="__codelineno-11-8" name="__codelineno-11-8"></a>
+<a href="#__codelineno-11-9" id="__codelineno-11-9" name="__codelineno-11-9"></a><span class="n">otm</span> <span class="o">=</span> <span class="n">visio_processor</span><span class="o">.</span><span class="n">process</span><span class="p">()</span>
 </code></pre></div></p>
 </article>
 </div>

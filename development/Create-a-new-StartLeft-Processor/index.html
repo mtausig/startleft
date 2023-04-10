@@ -341,11 +341,6 @@
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#update-the-swagger-schema">
-    Update the Swagger schema
-  </a>
-</li>
-<li class="md-nav__item">
 <a class="md-nav__link" href="#try-it-on-the-rest-api">
     Try it on the REST API
   </a>
@@ -664,11 +659,6 @@
 <li class="md-nav__item">
 <a class="md-nav__link" href="#configure-the-module">
     Configure the module
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#update-the-swagger-schema">
-    Update the Swagger schema
   </a>
 </li>
 <li class="md-nav__item">
@@ -1100,31 +1090,6 @@ no code is needed, and you only need to perform the configuration steps below.</
 <a href="#__codelineno-13-4" id="__codelineno-13-4" name="__codelineno-13-4"></a>        <span class="s1">'provider_type'</span><span class="p">:</span> <span class="s1">'MAIS'</span><span class="p">,</span>
 <a href="#__codelineno-13-5" id="__codelineno-13-5" name="__codelineno-13-5"></a>        <span class="s1">'forbidden_dependencies'</span><span class="p">:</span> <span class="p">[</span><span class="s1">'startleft'</span><span class="p">,</span> <span class="s1">'slp_cft'</span><span class="p">,</span> <span class="s1">'slp_tf'</span><span class="p">,</span> <span class="s1">'slp_visio'</span><span class="p">,</span> <span class="s1">'slp_mtmt'</span><span class="p">]</span>
 <a href="#__codelineno-13-6" id="__codelineno-13-6" name="__codelineno-13-6"></a>     <span class="p">}</span>
-</code></pre></div></li>
-</ol>
-<h3 id="update-the-swagger-schema">Update the Swagger schema</h3>
-<ol>
-<li>Open the file <code>startleft/resources/api/v1/swagger.yaml</code> where the API is defined.</li>
-<li>Add the new MAIS type to the <code>iac_type</code> description and to the <code>IacType</code> enum:
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-14-1" id="__codelineno-14-1" name="__codelineno-14-1"></a><span class="c1"># Reduced for simplicity</span><span class="w"></span>
-<a href="#__codelineno-14-2" id="__codelineno-14-2" name="__codelineno-14-2"></a><span class="nt">components</span><span class="p">:</span><span class="w"></span>
-<a href="#__codelineno-14-3" id="__codelineno-14-3" name="__codelineno-14-3"></a><span class="w">  </span><span class="nt">schemas</span><span class="p">:</span><span class="w"></span>
-<a href="#__codelineno-14-4" id="__codelineno-14-4" name="__codelineno-14-4"></a><span class="w">    </span><span class="nt">Body_iac_api_v1_startleft_iac_post</span><span class="p">:</span><span class="w"></span>
-<a href="#__codelineno-14-5" id="__codelineno-14-5" name="__codelineno-14-5"></a><span class="w">      </span><span class="nt">properties</span><span class="p">:</span><span class="w"></span>
-<a href="#__codelineno-14-6" id="__codelineno-14-6" name="__codelineno-14-6"></a><span class="w">        </span><span class="nt">iac_type</span><span class="p">:</span><span class="w"></span>
-<a href="#__codelineno-14-7" id="__codelineno-14-7" name="__codelineno-14-7"></a><span class="w">          </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">'Type</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">IaC</span><span class="nv"> </span><span class="s">File:</span><span class="nv"> </span><span class="s">CLOUDFORMATION,</span><span class="nv"> </span><span class="s">TERRAFORM,</span><span class="nv"> </span><span class="s">MAIS'</span><span class="w"></span>
-</code></pre></div>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-15-1" id="__codelineno-15-1" name="__codelineno-15-1"></a><span class="c1"># Reduced for simplicity</span><span class="w"></span>
-<a href="#__codelineno-15-2" id="__codelineno-15-2" name="__codelineno-15-2"></a><span class="nt">components</span><span class="p">:</span><span class="w"></span>
-<a href="#__codelineno-15-3" id="__codelineno-15-3" name="__codelineno-15-3"></a><span class="w">  </span><span class="nt">schemas</span><span class="p">:</span><span class="w"></span>
-<a href="#__codelineno-15-4" id="__codelineno-15-4" name="__codelineno-15-4"></a><span class="w">    </span><span class="nt">IacType</span><span class="p">:</span><span class="w"></span>
-<a href="#__codelineno-15-5" id="__codelineno-15-5" name="__codelineno-15-5"></a><span class="w">       </span><span class="nt">title</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">IacType</span><span class="w"></span>
-<a href="#__codelineno-15-6" id="__codelineno-15-6" name="__codelineno-15-6"></a><span class="w">       </span><span class="nt">enum</span><span class="p">:</span><span class="w"></span>
-<a href="#__codelineno-15-7" id="__codelineno-15-7" name="__codelineno-15-7"></a><span class="w">       </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">CLOUDFORMATION</span><span class="w"></span>
-<a href="#__codelineno-15-8" id="__codelineno-15-8" name="__codelineno-15-8"></a><span class="w">       </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">TERRAFORM</span><span class="w"></span>
-<a href="#__codelineno-15-9" id="__codelineno-15-9" name="__codelineno-15-9"></a><span class="w">       </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">MAIS</span><span class="w"></span>
-<a href="#__codelineno-15-10" id="__codelineno-15-10" name="__codelineno-15-10"></a><span class="w">       </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span><span class="w"></span>
-<a href="#__codelineno-15-11" id="__codelineno-15-11" name="__codelineno-15-11"></a><span class="w">       </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Type of IaC file</span><span class="w"></span>
 </code></pre></div></li>
 </ol>
 <h3 id="try-it-on-the-rest-api">Try it on the REST API</h3>
