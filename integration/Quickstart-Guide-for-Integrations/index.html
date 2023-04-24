@@ -6,11 +6,13 @@
 <meta charset="utf-8"/>
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
 <link href="https://iriusrisk.github.io/startleft/integration/Quickstart-Guide-for-Integrations/" rel="canonical"/>
+<link href="../../usage/REST-API/" rel="prev"/>
+<link href="../../development/Quickstart-Guide-for-Developers/" rel="next"/>
 <link href="../../assets/images/favicon.png" rel="icon"/>
-<meta content="mkdocs-1.4.2, mkdocs-material-8.5.10" name="generator"/>
+<meta content="mkdocs-1.4.2, mkdocs-material-9.0.13" name="generator"/>
 <title>Quickstart Guide for Integrations - StartLeft</title>
-<link href="../../assets/stylesheets/main.975780f9.min.css" rel="stylesheet"/>
-<link href="../../assets/stylesheets/palette.2505c338.min.css" rel="stylesheet"/>
+<link href="../../assets/stylesheets/main.ffa9267a.min.css" rel="stylesheet"/>
+<link href="../../assets/stylesheets/palette.a0c5b2b5.min.css" rel="stylesheet"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
 <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
@@ -98,7 +100,7 @@
 <div class="md-search-result__meta">
             Initializing search
           </div>
-<ol class="md-search-result__list"></ol>
+<ol class="md-search-result__list" role="presentation"></ol>
 </div>
 </div>
 </div>
@@ -107,7 +109,7 @@
 <div class="md-header__source">
 <a class="md-source" data-md-component="source" href="https://github.com/iriusrisk/startleft" title="Go to repository">
 <div class="md-source__icon md-icon">
-<svg viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"></path></svg>
+<svg viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.3.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"></path></svg>
 </div>
 <div class="md-source__repository">
     GitHub
@@ -132,7 +134,7 @@
 <div class="md-nav__source">
 <a class="md-source" data-md-component="source" href="https://github.com/iriusrisk/startleft" title="Go to repository">
 <div class="md-source__icon md-icon">
-<svg viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"></path></svg>
+<svg viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.3.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"></path></svg>
 </div>
 <div class="md-source__repository">
     GitHub
@@ -166,12 +168,12 @@
       </a>
 </li>
 <li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" id="__nav_6" type="checkbox"/>
-<label class="md-nav__link" for="__nav_6">
+<input class="md-nav__toggle md-toggle" id="__nav_6" type="checkbox"/>
+<label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
           Usage
           <span class="md-nav__icon md-icon"></span>
 </label>
-<nav aria-label="Usage" class="md-nav" data-md-level="1">
+<nav aria-expanded="false" aria-labelledby="__nav_6_label" class="md-nav" data-md-level="1">
 <label class="md-nav__title" for="__nav_6">
 <span class="md-nav__icon md-icon"></span>
           Usage
@@ -191,19 +193,19 @@
 </nav>
 </li>
 <li class="md-nav__item md-nav__item--active md-nav__item--nested">
-<input checked="" class="md-nav__toggle md-toggle" data-md-toggle="__nav_7" id="__nav_7" type="checkbox"/>
-<label class="md-nav__link" for="__nav_7">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_7" type="checkbox"/>
+<label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
           Guide for Integrations
           <span class="md-nav__icon md-icon"></span>
 </label>
-<nav aria-label="Guide for Integrations" class="md-nav" data-md-level="1">
+<nav aria-expanded="true" aria-labelledby="__nav_7_label" class="md-nav" data-md-level="1">
 <label class="md-nav__title" for="__nav_7">
 <span class="md-nav__icon md-icon"></span>
           Guide for Integrations
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item md-nav__item--active">
-<input class="md-nav__toggle md-toggle" data-md-toggle="toc" id="__toc" type="checkbox"/>
+<input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
 <label class="md-nav__link md-nav__link--active" for="__toc">
           Quickstart Guide for Integrations
           <span class="md-nav__icon md-icon"></span>
@@ -262,12 +264,12 @@
 </nav>
 </li>
 <li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8" id="__nav_8" type="checkbox"/>
-<label class="md-nav__link" for="__nav_8">
+<input class="md-nav__toggle md-toggle" id="__nav_8" type="checkbox"/>
+<label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
           Guide for Developers
           <span class="md-nav__icon md-icon"></span>
 </label>
-<nav aria-label="Guide for Developers" class="md-nav" data-md-level="1">
+<nav aria-expanded="false" aria-labelledby="__nav_8_label" class="md-nav" data-md-level="1">
 <label class="md-nav__title" for="__nav_8">
 <span class="md-nav__icon md-icon"></span>
           Guide for Developers
@@ -302,24 +304,24 @@
 </nav>
 </li>
 <li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9" id="__nav_9" type="checkbox"/>
-<label class="md-nav__link" for="__nav_9">
+<input class="md-nav__toggle md-toggle" id="__nav_9" type="checkbox"/>
+<label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
           StartLeft Processors (SLP)
           <span class="md-nav__icon md-icon"></span>
 </label>
-<nav aria-label="StartLeft Processors (SLP)" class="md-nav" data-md-level="1">
+<nav aria-expanded="false" aria-labelledby="__nav_9_label" class="md-nav" data-md-level="1">
 <label class="md-nav__title" for="__nav_9">
 <span class="md-nav__icon md-icon"></span>
           StartLeft Processors (SLP)
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9_1" id="__nav_9_1" type="checkbox"/>
-<label class="md-nav__link" for="__nav_9_1">
+<input class="md-nav__toggle md-toggle" id="__nav_9_1" type="checkbox"/>
+<label class="md-nav__link" for="__nav_9_1" id="__nav_9_1_label" tabindex="0">
           Microsoft Threat Modeling Tool (MTMT)
           <span class="md-nav__icon md-icon"></span>
 </label>
-<nav aria-label="Microsoft Threat Modeling Tool (MTMT)" class="md-nav" data-md-level="2">
+<nav aria-expanded="false" aria-labelledby="__nav_9_1_label" class="md-nav" data-md-level="2">
 <label class="md-nav__title" for="__nav_9_1">
 <span class="md-nav__icon md-icon"></span>
           Microsoft Threat Modeling Tool (MTMT)
@@ -339,12 +341,12 @@
 </nav>
 </li>
 <li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9_2" id="__nav_9_2" type="checkbox"/>
-<label class="md-nav__link" for="__nav_9_2">
+<input class="md-nav__toggle md-toggle" id="__nav_9_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_9_2" id="__nav_9_2_label" tabindex="0">
           CloudFormation Template
           <span class="md-nav__icon md-icon"></span>
 </label>
-<nav aria-label="CloudFormation Template" class="md-nav" data-md-level="2">
+<nav aria-expanded="false" aria-labelledby="__nav_9_2_label" class="md-nav" data-md-level="2">
 <label class="md-nav__title" for="__nav_9_2">
 <span class="md-nav__icon md-icon"></span>
           CloudFormation Template
@@ -369,12 +371,12 @@
 </nav>
 </li>
 <li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9_3" id="__nav_9_3" type="checkbox"/>
-<label class="md-nav__link" for="__nav_9_3">
+<input class="md-nav__toggle md-toggle" id="__nav_9_3" type="checkbox"/>
+<label class="md-nav__link" for="__nav_9_3" id="__nav_9_3_label" tabindex="0">
           Terraform
           <span class="md-nav__icon md-icon"></span>
 </label>
-<nav aria-label="Terraform" class="md-nav" data-md-level="2">
+<nav aria-expanded="false" aria-labelledby="__nav_9_3_label" class="md-nav" data-md-level="2">
 <label class="md-nav__title" for="__nav_9_3">
 <span class="md-nav__icon md-icon"></span>
           Terraform
@@ -386,12 +388,12 @@
       </a>
 </li>
 <li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9_3_2" id="__nav_9_3_2" type="checkbox"/>
-<label class="md-nav__link" for="__nav_9_3_2">
+<input class="md-nav__toggle md-toggle" id="__nav_9_3_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_9_3_2" id="__nav_9_3_2_label" tabindex="0">
           Terraform Mapping
           <span class="md-nav__icon md-icon"></span>
 </label>
-<nav aria-label="Terraform Mapping" class="md-nav" data-md-level="3">
+<nav aria-expanded="false" aria-labelledby="__nav_9_3_2_label" class="md-nav" data-md-level="3">
 <label class="md-nav__title" for="__nav_9_3_2">
 <span class="md-nav__icon md-icon"></span>
           Terraform Mapping
@@ -434,12 +436,12 @@
 </nav>
 </li>
 <li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9_4" id="__nav_9_4" type="checkbox"/>
-<label class="md-nav__link" for="__nav_9_4">
+<input class="md-nav__toggle md-toggle" id="__nav_9_4" type="checkbox"/>
+<label class="md-nav__link" for="__nav_9_4" id="__nav_9_4_label" tabindex="0">
           Visio
           <span class="md-nav__icon md-icon"></span>
 </label>
-<nav aria-label="Visio" class="md-nav" data-md-level="2">
+<nav aria-expanded="false" aria-labelledby="__nav_9_4_label" class="md-nav" data-md-level="2">
 <label class="md-nav__title" for="__nav_9_4">
 <span class="md-nav__icon md-icon"></span>
           Visio
@@ -563,10 +565,10 @@ operate.</p>
 <p>If you only want to experiment with the API, this is probably the simplest way. For that, you need to have
 StartLeft installed in your machine as explained in the <a href="../../Quickstart-Guide-for-Beginners/">Quickstart Guide for Beginners</a>
 and execute the command:
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a>startleft server
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a>startleft<span class="w"> </span>server
 </code></pre></div>
 <strong>The server is started by default in the port 5000</strong>, but you can configure it with the <code>--port</code>/<code>-p</code> modifier.
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-1-1" id="__codelineno-1-1" name="__codelineno-1-1"></a>startleft server --port <span class="m">8080</span>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-1-1" id="__codelineno-1-1" name="__codelineno-1-1"></a>startleft<span class="w"> </span>server<span class="w"> </span>--port<span class="w"> </span><span class="m">8080</span>
 </code></pre></div>
 Once you have your service started, you can check the API documentation in <a href="http://localhost:5000/docs">http://localhost:5000/docs</a>.</p>
 <h3 id="deploy-dockerized">Deploy dockerized</h3>
@@ -574,60 +576,54 @@ Once you have your service started, you can check the API documentation in <a hr
 In the same StartLeft repository a ready-to-use Dockerfile is provided, so you already have what you need to set up your 
 dockerized service.</p>
 <p>For trying it, let's clone the StartLeft repository:
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-2-1" id="__codelineno-2-1" name="__codelineno-2-1"></a>git clone https://github.com/iriusrisk/startleft.git
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-2-1" id="__codelineno-2-1" name="__codelineno-2-1"></a>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/iriusrisk/startleft.git
 </code></pre></div></p>
 <p>Jump into the repo folder:
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-3-1" id="__codelineno-3-1" name="__codelineno-3-1"></a><span class="nb">cd</span> startleft
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-3-1" id="__codelineno-3-1" name="__codelineno-3-1"></a><span class="nb">cd</span><span class="w"> </span>startleft
 </code></pre></div></p>
 <p>Optionally you can build the image for a specific version doing checkout of the correspondant release branch. For example,
 to generate an image for the version 1.5.0, you may execute:
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-4-1" id="__codelineno-4-1" name="__codelineno-4-1"></a>git checkout release/1.5.0
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-4-1" id="__codelineno-4-1" name="__codelineno-4-1"></a>git<span class="w"> </span>checkout<span class="w"> </span>release/1.5.0
 </code></pre></div></p>
 <p>Now, we can create the StartLeft image:
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-5-1" id="__codelineno-5-1" name="__codelineno-5-1"></a>docker build . -f deployment/Dockerfile.application -t startleft
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-5-1" id="__codelineno-5-1" name="__codelineno-5-1"></a>docker<span class="w"> </span>build<span class="w"> </span>.<span class="w"> </span>-f<span class="w"> </span>deployment/Dockerfile.docs.application.application<span class="w"> </span>-t<span class="w"> </span>startleft
 </code></pre></div></p>
 <p>And, finally, we can run the docker container for the image we have just generated. Notice that you can select the
 port where the service is exposed in a standard Docker way.
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-6-1" id="__codelineno-6-1" name="__codelineno-6-1"></a>docker run -p <span class="m">5000</span>:5000 startleft
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-6-1" id="__codelineno-6-1" name="__codelineno-6-1"></a>docker<span class="w"> </span>run<span class="w"> </span>-p<span class="w"> </span><span class="m">5000</span>:5000<span class="w"> </span>startleft
 </code></pre></div></p>
 <p>If everything works, you should see a log like this:
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-7-1" id="__codelineno-7-1" name="__codelineno-7-1"></a>INFO:     Started server process <span class="o">[</span><span class="m">1</span><span class="o">]</span>
-<a href="#__codelineno-7-2" id="__codelineno-7-2" name="__codelineno-7-2"></a>INFO:     Waiting <span class="k">for</span> application startup.
-<a href="#__codelineno-7-3" id="__codelineno-7-3" name="__codelineno-7-3"></a>INFO:     Application startup complete.
-<a href="#__codelineno-7-4" id="__codelineno-7-4" name="__codelineno-7-4"></a>INFO:     Uvicorn running on http://0.0.0.0:5000 <span class="o">(</span>Press CTRL+C to quit<span class="o">)</span>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-7-1" id="__codelineno-7-1" name="__codelineno-7-1"></a>INFO:<span class="w">     </span>Started<span class="w"> </span>server<span class="w"> </span>process<span class="w"> </span><span class="o">[</span><span class="m">1</span><span class="o">]</span>
+<a href="#__codelineno-7-2" id="__codelineno-7-2" name="__codelineno-7-2"></a>INFO:<span class="w">     </span>Waiting<span class="w"> </span><span class="k">for</span><span class="w"> </span>application<span class="w"> </span>startup.
+<a href="#__codelineno-7-3" id="__codelineno-7-3" name="__codelineno-7-3"></a>INFO:<span class="w">     </span>Application<span class="w"> </span>startup<span class="w"> </span>complete.
+<a href="#__codelineno-7-4" id="__codelineno-7-4" name="__codelineno-7-4"></a>INFO:<span class="w">     </span>Uvicorn<span class="w"> </span>running<span class="w"> </span>on<span class="w"> </span>http://0.0.0.0:5000<span class="w"> </span><span class="o">(</span>Press<span class="w"> </span>CTRL+C<span class="w"> </span>to<span class="w"> </span>quit<span class="o">)</span>
 </code></pre></div></p>
 <p>As in the local deployment, we can check that the service documentation is correctly located in 
 <a href="http://localhost:5000/docs">http://localhost:5000/docs</a>.</p>
 <p>Another way to verify the availability of the service is performing a request to the health endpoint, which can be done
 through a curl command like:
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-8-1" id="__codelineno-8-1" name="__codelineno-8-1"></a>curl localhost:5000/health
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-8-1" id="__codelineno-8-1" name="__codelineno-8-1"></a>curl<span class="w"> </span>localhost:5000/health
 </code></pre></div>
 This command should return:
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-9-1" id="__codelineno-9-1" name="__codelineno-9-1"></a><span class="p">{</span><span class="w"></span>
-<a href="#__codelineno-9-2" id="__codelineno-9-2" name="__codelineno-9-2"></a><span class="w">  </span><span class="nt">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"OK"</span><span class="p">,</span><span class="w"></span>
-<a href="#__codelineno-9-3" id="__codelineno-9-3" name="__codelineno-9-3"></a><span class="w">  </span><span class="nt">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"development-version"</span><span class="p">,</span><span class="w"></span>
-<a href="#__codelineno-9-4" id="__codelineno-9-4" name="__codelineno-9-4"></a><span class="w">  </span><span class="nt">"components"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<a href="#__codelineno-9-5" id="__codelineno-9-5" name="__codelineno-9-5"></a><span class="w">    </span><span class="nt">"StartLeft"</span><span class="p">:</span><span class="w"> </span><span class="s2">"OK"</span><span class="w"></span>
-<a href="#__codelineno-9-6" id="__codelineno-9-6" name="__codelineno-9-6"></a><span class="w">  </span><span class="p">}</span><span class="w"></span>
-<a href="#__codelineno-9-7" id="__codelineno-9-7" name="__codelineno-9-7"></a><span class="p">}</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-9-1" id="__codelineno-9-1" name="__codelineno-9-1"></a><span class="p">{</span>
+<a href="#__codelineno-9-2" id="__codelineno-9-2" name="__codelineno-9-2"></a><span class="w">  </span><span class="nt">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"OK"</span><span class="p">,</span>
+<a href="#__codelineno-9-3" id="__codelineno-9-3" name="__codelineno-9-3"></a><span class="w">  </span><span class="nt">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"development-version"</span><span class="p">,</span>
+<a href="#__codelineno-9-4" id="__codelineno-9-4" name="__codelineno-9-4"></a><span class="w">  </span><span class="nt">"components"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a href="#__codelineno-9-5" id="__codelineno-9-5" name="__codelineno-9-5"></a><span class="w">    </span><span class="nt">"StartLeft"</span><span class="p">:</span><span class="w"> </span><span class="s2">"OK"</span>
+<a href="#__codelineno-9-6" id="__codelineno-9-6" name="__codelineno-9-6"></a><span class="w">  </span><span class="p">}</span>
+<a href="#__codelineno-9-7" id="__codelineno-9-7" name="__codelineno-9-7"></a><span class="p">}</span>
 </code></pre></div>
 For more details about how to use the StartLeft API, you can check the <a href="../../usage/REST-API/">REST API page</a>.</p>
 <h4 id="custom-dockerfile">Custom Dockerfile</h4>
 <p>The Dockerfile provided should be enough for the most common integration scenarios, but, of course, it is possible to
 create a custom docker image for StartLeft. For that, you can take the existent 
 <a href="https://raw.githubusercontent.com/iriusrisk/startleft/main/Dockerfile">Dockerfile</a> available in the root of the StartLeft
-repository as a base. However, you must bear in mind the following considerations:</p>
+repository as a base. However, you must bear in mind that every <a href="https://hub.docker.com/_/python">official python image from the Docker Hub</a> 
+for versions over 3.6 should work, but:</p>
 <ul>
-<li>Every <a href="https://hub.docker.com/_/python">official python image from the Docker Hub</a> for versions over 3.6 should work, but:<ul>
 <li>Depending on the base image, you may need to install additional libraries.</li>
 <li><strong>Debian/Ubuntu based python official images present security vulnerabilities</strong>. This is the reason we decided 
-to use the Alpine based one despite the fact it is significantly slower than others at building time.</li>
-</ul>
-</li>
-<li>Although you could set as the entrypoint the <code>startleft server</code> command, it is more recommendable to just use the uvicorn 
-  command, that also allows you to select the default deployment port:
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-10-1" id="__codelineno-10-1" name="__codelineno-10-1"></a>ENTRYPOINT ["uvicorn", "startleft.startleft.api.fastapi_server:webapp", "--host", "0.0.0.0", "--port", "5000"]
-</code></pre></div></li>
+    to use the Alpine based one despite the fact it is significantly slower than others at building time.</li>
 </ul>
 <h2 id="in-batch-processes">In batch processes</h2>
 <hr/>
@@ -652,15 +648,15 @@ of software. Thus, <strong>releasing useful modules as the SLPs or the OTM modul
 However, even though an advanced user could manage to install and use StartLeft as a library, it is not recommended because 
 some related changes (like modules' visibility) that could break retro compatibility will probably need to be done.</p>
 <p>The final goal would be that, <u>in the future</u>, you could do something like this in your own python script:
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-11-1" id="__codelineno-11-1" name="__codelineno-11-1"></a><span class="kn">from</span> <span class="nn">slp_visio</span> <span class="kn">import</span> <span class="n">VisioProcessor</span>
-<a href="#__codelineno-11-2" id="__codelineno-11-2" name="__codelineno-11-2"></a>
-<a href="#__codelineno-11-3" id="__codelineno-11-3" name="__codelineno-11-3"></a><span class="n">visio_processor</span> <span class="o">=</span> <span class="n">VisioProcessor</span><span class="p">(</span>
-<a href="#__codelineno-11-4" id="__codelineno-11-4" name="__codelineno-11-4"></a>    <span class="n">project_id</span><span class="o">=</span><span class="s1">'sample-project-id'</span><span class="p">,</span> 
-<a href="#__codelineno-11-5" id="__codelineno-11-5" name="__codelineno-11-5"></a>    <span class="n">project_name</span><span class="o">=</span><span class="s1">'sample-project-name'</span><span class="p">,</span> 
-<a href="#__codelineno-11-6" id="__codelineno-11-6" name="__codelineno-11-6"></a>    <span class="n">source</span><span class="o">=</span><span class="nb">open</span><span class="p">(</span><span class="s1">'visio.vsdx'</span><span class="p">,</span> <span class="s1">'r'</span><span class="p">),</span> 
-<a href="#__codelineno-11-7" id="__codelineno-11-7" name="__codelineno-11-7"></a>    <span class="n">mappings</span><span class="o">=</span><span class="p">[</span><span class="nb">open</span><span class="p">(</span><span class="s1">'mapping.yaml'</span><span class="p">,</span> <span class="s1">'r'</span><span class="p">)])</span>
-<a href="#__codelineno-11-8" id="__codelineno-11-8" name="__codelineno-11-8"></a>
-<a href="#__codelineno-11-9" id="__codelineno-11-9" name="__codelineno-11-9"></a><span class="n">otm</span> <span class="o">=</span> <span class="n">visio_processor</span><span class="o">.</span><span class="n">process</span><span class="p">()</span>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-10-1" id="__codelineno-10-1" name="__codelineno-10-1"></a><span class="kn">from</span> <span class="nn">slp_visio</span> <span class="kn">import</span> <span class="n">VisioProcessor</span>
+<a href="#__codelineno-10-2" id="__codelineno-10-2" name="__codelineno-10-2"></a>
+<a href="#__codelineno-10-3" id="__codelineno-10-3" name="__codelineno-10-3"></a><span class="n">visio_processor</span> <span class="o">=</span> <span class="n">VisioProcessor</span><span class="p">(</span>
+<a href="#__codelineno-10-4" id="__codelineno-10-4" name="__codelineno-10-4"></a>    <span class="n">project_id</span><span class="o">=</span><span class="s1">'sample-project-id'</span><span class="p">,</span> 
+<a href="#__codelineno-10-5" id="__codelineno-10-5" name="__codelineno-10-5"></a>    <span class="n">project_name</span><span class="o">=</span><span class="s1">'sample-project-name'</span><span class="p">,</span> 
+<a href="#__codelineno-10-6" id="__codelineno-10-6" name="__codelineno-10-6"></a>    <span class="n">source</span><span class="o">=</span><span class="nb">open</span><span class="p">(</span><span class="s1">'visio.vsdx'</span><span class="p">,</span> <span class="s1">'r'</span><span class="p">),</span> 
+<a href="#__codelineno-10-7" id="__codelineno-10-7" name="__codelineno-10-7"></a>    <span class="n">mappings</span><span class="o">=</span><span class="p">[</span><span class="nb">open</span><span class="p">(</span><span class="s1">'mapping.yaml'</span><span class="p">,</span> <span class="s1">'r'</span><span class="p">)])</span>
+<a href="#__codelineno-10-8" id="__codelineno-10-8" name="__codelineno-10-8"></a>
+<a href="#__codelineno-10-9" id="__codelineno-10-9" name="__codelineno-10-9"></a><span class="n">otm</span> <span class="o">=</span> <span class="n">visio_processor</span><span class="o">.</span><span class="n">process</span><span class="p">()</span>
 </code></pre></div></p>
 </article>
 </div>
@@ -668,34 +664,6 @@ some related changes (like modules' visibility) that could break retro compatibi
 </div>
 </main>
 <footer class="md-footer">
-<nav aria-label="Footer" class="md-footer__inner md-grid">
-<a aria-label="Previous: REST API" class="md-footer__link md-footer__link--prev" href="../../usage/REST-API/" rel="prev">
-<div class="md-footer__button md-icon">
-<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"></path></svg>
-</div>
-<div class="md-footer__title">
-<div class="md-ellipsis">
-<span class="md-footer__direction">
-                Previous
-              </span>
-              REST API
-            </div>
-</div>
-</a>
-<a aria-label="Next: Quickstart Guide for Developers" class="md-footer__link md-footer__link--next" href="../../development/Quickstart-Guide-for-Developers/" rel="next">
-<div class="md-footer__title">
-<div class="md-ellipsis">
-<span class="md-footer__direction">
-                Next
-              </span>
-              Quickstart Guide for Developers
-            </div>
-</div>
-<div class="md-footer__button md-icon">
-<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"></path></svg>
-</div>
-</a>
-</nav>
 <div class="md-footer-meta md-typeset">
 <div class="md-footer-meta__inner md-grid">
 <div class="md-copyright">
@@ -727,8 +695,8 @@ some related changes (like modules' visibility) that could break retro compatibi
 <input checked="" name="github" type="checkbox"/>
 <span class="task-list-indicator"></span>
           GitHub
-        <label>
-</label></label></li>
+        </label>
+</li>
 </ul>
 </div>
 <div class="md-consent__controls">
@@ -739,7 +707,7 @@ some related changes (like modules' visibility) that could break retro compatibi
 </aside>
 </div>
 <script>var consent=__md_get("__consent");if(consent)for(var input of document.forms.consent.elements)input.name&&(input.checked=consent[input.name]||!1);else"file:"!==location.protocol&&setTimeout(function(){document.querySelector("[data-md-component=consent]").hidden=!1},250);var action,form=document.forms.consent;for(action of["submit","reset"])form.addEventListener(action,function(e){if(e.preventDefault(),"reset"===e.type)for(var n of document.forms.consent.elements)n.name&&(n.checked=!1);__md_set("__consent",Object.fromEntries(Array.from(new FormData(form).keys()).map(function(e){return[e,!0]}))),location.hash="",location.reload()})</script>
-<script id="__config" type="application/json">{"base": "../..", "features": ["navigation.instant", "navigation.tracking", "search.suggest", "search.highlight", "content.code.annotate", "content.tabs.link"], "search": "../../assets/javascripts/workers/search.16e2a7d4.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
-<script src="../../assets/javascripts/bundle.5a2dcb6a.min.js"></script>
+<script id="__config" type="application/json">{"base": "../..", "features": ["navigation.instant", "navigation.tracking", "search.suggest", "search.highlight", "content.code.annotate", "content.tabs.link"], "search": "../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+<script src="../../assets/javascripts/bundle.2a6f1dda.min.js"></script>
 <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
 </html>
